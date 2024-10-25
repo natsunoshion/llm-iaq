@@ -1,0 +1,1574 @@
+Int8OPTForCausalLM(
+  (model): Int8OPTModel(
+    (decoder): Int8OPTDecoder(
+      (embed_tokens): Embedding(50272, 768, padding_idx=1)
+      (embed_positions): OPTLearnedPositionalEmbedding(2050, 768)
+      (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (1): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (2): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (3): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (4): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (5): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (6): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (7): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (8): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (9): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (10): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (11): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+      )
+    )
+  )
+  (lm_head): Linear(in_features=768, out_features=50272, bias=False)
+)
+ Int8OPTForCausalLM(
+  (model): Int8OPTModel(
+    (decoder): Int8OPTDecoder(
+      (embed_tokens): Embedding(50272, 768, padding_idx=1)
+      (embed_positions): OPTLearnedPositionalEmbedding(2050, 768)
+      (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      (layers): ModuleList(
+        (0): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (1): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (2): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (3): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (4): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (5): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (6): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (7): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (8): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (9): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (10): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+        (11): Int8OPTDecoderLayer(
+          (self_attn): Int8OPTAttention(
+            (qk_bmm): BMM_S8T_S8N_F32T()
+            (pv_bmm): BMM_S8T_S8N_S8T()
+            (k_proj): W8A8B8O8Linear()
+            (v_proj): W8A8B8O8Linear()
+            (q_proj): W8A8B8O8Linear()
+            (out_proj): W8A8BFP32OFP32Linear()
+          )
+          (self_attn_layer_norm): LayerNormQ()
+          (fc1): W8A8B8O8LinearReLU()
+          (fc2): W8A8BFP32OFP32Linear()
+          (final_layer_norm): LayerNormQ()
+        )
+      )
+    )
+  )
+  (lm_head): Linear(in_features=768, out_features=50272, bias=False)
+)
+number of parameters:  40184832
+total number of parameters:  40184832
+model Int8OPTModel(
+  (decoder): Int8OPTDecoder(
+    (embed_tokens): Embedding(50272, 768, padding_idx=1)
+    (embed_positions): OPTLearnedPositionalEmbedding(2050, 768)
+    (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (1): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (2): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (3): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (4): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (5): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (6): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (7): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (8): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (9): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (10): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+      (11): Int8OPTDecoderLayer(
+        (self_attn): Int8OPTAttention(
+          (qk_bmm): BMM_S8T_S8N_F32T()
+          (pv_bmm): BMM_S8T_S8N_S8T()
+          (k_proj): W8A8B8O8Linear()
+          (v_proj): W8A8B8O8Linear()
+          (q_proj): W8A8B8O8Linear()
+          (out_proj): W8A8BFP32OFP32Linear()
+        )
+        (self_attn_layer_norm): LayerNormQ()
+        (fc1): W8A8B8O8LinearReLU()
+        (fc2): W8A8BFP32OFP32Linear()
+        (final_layer_norm): LayerNormQ()
+      )
+    )
+  )
+)
+number of parameters:  40184832
+total number of parameters:  40184832
+model.decoder Int8OPTDecoder(
+  (embed_tokens): Embedding(50272, 768, padding_idx=1)
+  (embed_positions): OPTLearnedPositionalEmbedding(2050, 768)
+  (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+  (layers): ModuleList(
+    (0): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (1): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (2): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (3): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (4): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (5): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (6): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (7): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (8): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (9): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (10): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+    (11): Int8OPTDecoderLayer(
+      (self_attn): Int8OPTAttention(
+        (qk_bmm): BMM_S8T_S8N_F32T()
+        (pv_bmm): BMM_S8T_S8N_S8T()
+        (k_proj): W8A8B8O8Linear()
+        (v_proj): W8A8B8O8Linear()
+        (q_proj): W8A8B8O8Linear()
+        (out_proj): W8A8BFP32OFP32Linear()
+      )
+      (self_attn_layer_norm): LayerNormQ()
+      (fc1): W8A8B8O8LinearReLU()
+      (fc2): W8A8BFP32OFP32Linear()
+      (final_layer_norm): LayerNormQ()
+    )
+  )
+)
+number of parameters:  40184832
+total number of parameters:  40184832
+model.decoder.embed_tokens Embedding(50272, 768, padding_idx=1)
+number of parameters:  38608896
+total number of parameters:  38608896
+model.decoder.embed_positions OPTLearnedPositionalEmbedding(2050, 768)
+number of parameters:  1574400
+total number of parameters:  1574400
+model.decoder.final_layer_norm LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+number of parameters:  1536
+total number of parameters:  1536
+model.decoder.layers ModuleList(
+  (0): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (1): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (2): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (3): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (4): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (5): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (6): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (7): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (8): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (9): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (10): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+  (11): Int8OPTDecoderLayer(
+    (self_attn): Int8OPTAttention(
+      (qk_bmm): BMM_S8T_S8N_F32T()
+      (pv_bmm): BMM_S8T_S8N_S8T()
+      (k_proj): W8A8B8O8Linear()
+      (v_proj): W8A8B8O8Linear()
+      (q_proj): W8A8B8O8Linear()
+      (out_proj): W8A8BFP32OFP32Linear()
+    )
+    (self_attn_layer_norm): LayerNormQ()
+    (fc1): W8A8B8O8LinearReLU()
+    (fc2): W8A8BFP32OFP32Linear()
+    (final_layer_norm): LayerNormQ()
+  )
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.0.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.1.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.2.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.3.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.4.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.5.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.6.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.7.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.8.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.9.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.10.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11 Int8OPTDecoderLayer(
+  (self_attn): Int8OPTAttention(
+    (qk_bmm): BMM_S8T_S8N_F32T()
+    (pv_bmm): BMM_S8T_S8N_S8T()
+    (k_proj): W8A8B8O8Linear()
+    (v_proj): W8A8B8O8Linear()
+    (q_proj): W8A8B8O8Linear()
+    (out_proj): W8A8BFP32OFP32Linear()
+  )
+  (self_attn_layer_norm): LayerNormQ()
+  (fc1): W8A8B8O8LinearReLU()
+  (fc2): W8A8BFP32OFP32Linear()
+  (final_layer_norm): LayerNormQ()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn Int8OPTAttention(
+  (qk_bmm): BMM_S8T_S8N_F32T()
+  (pv_bmm): BMM_S8T_S8N_S8T()
+  (k_proj): W8A8B8O8Linear()
+  (v_proj): W8A8B8O8Linear()
+  (q_proj): W8A8B8O8Linear()
+  (out_proj): W8A8BFP32OFP32Linear()
+)
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn.qk_bmm BMM_S8T_S8N_F32T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn.pv_bmm BMM_S8T_S8N_S8T()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn.k_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn.v_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn.q_proj W8A8B8O8Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn.out_proj W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.self_attn_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.fc1 W8A8B8O8LinearReLU()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.fc2 W8A8BFP32OFP32Linear()
+number of parameters:  0
+total number of parameters:  0
+model.decoder.layers.11.final_layer_norm LayerNormQ()
+number of parameters:  0
+total number of parameters:  0
+lm_head Linear(in_features=768, out_features=50272, bias=False)
+number of parameters:  38608896
+total number of parameters:  38608896
