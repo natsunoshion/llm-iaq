@@ -209,7 +209,6 @@ def run_awq(
             )
 
         layer = layer.cpu()
-        # Haotian: check activation replacement
         del input_feat
         gc.collect()
         torch.cuda.empty_cache()

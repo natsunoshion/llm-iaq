@@ -1,8 +1,10 @@
 import torch
 from datasets import load_dataset
+# use for no-VPN server
 import os
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
+# we use same eval dataset as AWQ
 def get_calib_dataset(data="pileval", tokenizer=None, n_samples=512, block_size=512):
     if data == "pileval":
         dataset = load_dataset("mit-han-lab/pile-val-backup", split="validation")
@@ -24,7 +26,7 @@ def get_calib_dataset(data="pileval", tokenizer=None, n_samples=512, block_size=
         n_run += 1
         if n_run == n_samples:
             break
-    # now concatenate all samples and split according to block size
+
     cat_samples = torch.cat(samples, dim=1)
     n_split = cat_samples.shape[1] // block_size
     print(f" * Split into {n_split} blocks")

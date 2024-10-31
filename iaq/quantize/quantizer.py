@@ -57,7 +57,7 @@ def scale_activations(module):
         set_op_by_name(module, "mlp.act", act)
 
 
-# core quantization method (simulated quantization)
+# core quantization method (fake quantization)
 def pseudo_quantize_tensor(
     w, n_bit=8, zero_point=True, q_group_size=-1, inplace=False, get_scale_zp=False
 ):

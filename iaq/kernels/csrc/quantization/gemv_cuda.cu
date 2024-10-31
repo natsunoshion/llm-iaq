@@ -1,12 +1,7 @@
 // Inspired by https://github.com/ankan-ban/llama_cu_awq
 /*
 
-@article{lin2023awq,
-  title={AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration},
-  author={Lin, Ji and Tang, Jiaming and Tang, Haotian and Yang, Shang and Dang, Xingyu and Han, Song},
-  journal={arXiv},
-  year={2023}
-}
+We follow AWQ to implement the GEMV kernel for s4 to fp16x2.
 
 */
 

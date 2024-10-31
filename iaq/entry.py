@@ -221,7 +221,6 @@ def build_model_and_enc(model_path):
         }
         device_map = infer_auto_device_map(
             model,
-            # TODO: can we remove this?
             no_split_module_classes=[
                 "OPTDecoderLayer",
                 "LlamaDecoderLayer",
@@ -245,7 +244,7 @@ def main():
     model, enc = build_model_and_enc(args.model_path)
 
     if args.tasks is not None:
-        # https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/llama.py#L206
+        # Refer: https://github.com/IST-DASLab/gptq/blob/2d65066eeb06a5c9ff5184d8cebdf33662c67faf/llama.py#L206
         if args.tasks == "wikitext":
             testenc = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
             testenc = enc("\n\n".join(testenc["text"]), return_tensors="pt")
@@ -294,12 +293,7 @@ def main():
             print(evaluator.make_table(results))
 
         if args.output_path is not None:
-            os.makedirs(os.path.dirname(args.output_path), exist_ok=True)
-            # otherwise cannot save
-            results["config"]["model"] = args.model_path
-            with open(args.output_path, "w") as f:
-                json.dump(results, f, indent=2)
-
+            pass
 
 if __name__ == "__main__":
     main()

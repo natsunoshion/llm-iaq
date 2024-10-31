@@ -16,11 +16,6 @@ class LMEvalAdaptor(BaseLM):
 
         self.tokenizer = tokenizer
 
-        # assert isinstance(self.tokenizer, (
-        #     transformers.GPT2Tokenizer, transformers.GPT2TokenizerFast,
-        #     transformers.T5Tokenizer, transformers.T5TokenizerFast,
-        # )), "this tokenizer has not been checked for compatibility yet!"
-
         self.vocab_size = self.tokenizer.vocab_size
 
         self._batch_size = batch_size
@@ -74,11 +69,7 @@ class LMEvalAdaptor(BaseLM):
 
     def _model_call(self, inps):
         """
-        inps: a torch tensor of shape [batch, sequence]
-        the size of sequence may vary from call to call
-
-        returns: a torch tensor of shape [batch, sequence, vocab] with the
-        logits returned from the model
+        [batch, sequence] -> [batch, sequence, vocab]
         """
         with torch.no_grad():
             if isinstance(
