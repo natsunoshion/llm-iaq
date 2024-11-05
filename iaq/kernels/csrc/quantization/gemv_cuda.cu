@@ -52,12 +52,12 @@ Notes:
   the second dimension is rounded up to a multiple of PACK_FACTOR.
 */
 __global__ void gemv_kernel_g64(
-  const float4* _inputs, const uint32_t* weight, const uint32_t* zeros, const half* scaling_factors, half* _outputs, 
+  const float4* _inputs, const uint32_t* weight, const uint32_t* zeros, const half* scaling_factors, half* _outputs,
   const int IC, const int OC){
     const int group_size = 64;
     float psum = 0;
     const int batch_idx = blockIdx.z;
-    const int oc_idx = blockIdx.y * blockDim.y + threadIdx.y; 
+    const int oc_idx = blockIdx.y * blockDim.y + threadIdx.y;
     const float4* inputs = _inputs + batch_idx * IC / PACK_FACTOR;
     half* outputs = _outputs + batch_idx * OC;
     // This is essentially zeros_w.
@@ -79,7 +79,7 @@ __global__ void gemv_kernel_g64(
       // g64: two threads -> 64 numbers -> 1 group; 1 warp = 16 groups.
       float scaling_factor = __half2float(scaling_factors[oc_idx * sf_w + packed_group_idx * 16 + (threadIdx.x / 2)]);
       float current_zeros = (float)((packed_zeros >> (threadIdx.x / 2 * 4)) & 0xF);
-      int inputs_ptr_delta = packed_group_idx * WARP_SIZE * 4 + threadIdx.x * 4; 
+      int inputs_ptr_delta = packed_group_idx * WARP_SIZE * 4 + threadIdx.x * 4;
       const float4* inputs_ptr = inputs + inputs_ptr_delta;
       // multiply 32 weights with 32 inputs
       #pragma unroll
@@ -104,7 +104,7 @@ __global__ void gemv_kernel_g64(
     }
     psum = warp_reduce_sum(psum);
     if (threadIdx.x == 0) {
-     outputs[oc_idx] = __float2half(psum); 
+     outputs[oc_idx] = __float2half(psum);
     }
 }
 
@@ -124,12 +124,12 @@ Notes:
   the second dimension is rounded up to a multiple of PACK_FACTOR.
 */
 __global__ void gemv_kernel_g128(
-  const float4* _inputs, const uint32_t* weight, const uint32_t* zeros, const half* scaling_factors, half* _outputs, 
+  const float4* _inputs, const uint32_t* weight, const uint32_t* zeros, const half* scaling_factors, half* _outputs,
   const int IC, const int OC){
     const int group_size = 128;
     float psum = 0;
     const int batch_idx = blockIdx.z;
-    const int oc_idx = blockIdx.y * blockDim.y + threadIdx.y; 
+    const int oc_idx = blockIdx.y * blockDim.y + threadIdx.y;
     const float4* inputs = _inputs + batch_idx * IC / PACK_FACTOR;
     half* outputs = _outputs + batch_idx * OC;
     const int num_groups_packed = make_divisible(IC / group_size, PACK_FACTOR);
@@ -150,7 +150,7 @@ __global__ void gemv_kernel_g128(
       // g128: four threads -> 128 numbers -> 1 group; 1 warp = 8 groups.
       float scaling_factor = __half2float(scaling_factors[oc_idx * sf_w + packed_group_idx * 8 + (threadIdx.x / 4)]);
       float current_zeros = (float)((packed_zeros >> (threadIdx.x / 4 * 4)) & 0xF);
-      int inputs_ptr_delta = packed_group_idx * WARP_SIZE * 4 + threadIdx.x * 4; 
+      int inputs_ptr_delta = packed_group_idx * WARP_SIZE * 4 + threadIdx.x * 4;
       const float4* inputs_ptr = inputs + inputs_ptr_delta;
       // multiply 32 weights with 32 inputs
       #pragma unroll
@@ -175,7 +175,7 @@ __global__ void gemv_kernel_g128(
     }
     psum = warp_reduce_sum(psum);
     if (threadIdx.x == 0) {
-     outputs[oc_idx] = __float2half(psum); 
+     outputs[oc_idx] = __float2half(psum);
     }
 }
 
@@ -240,3 +240,30 @@ torch::Tensor gemv_forward_cuda(
     return _out_feats;
 ;}
 
+// normal matmul
+__global__ void gemv_kernel(
+  const float4* inputs, const float4* weight, half* outputs,
+  const int IC, const int OC)
+{
+    float psum = 0;
+    const int batch_idx = blockIdx.z;
+    const int oc_idx = blockIdx.y * blockDim.y + threadIdx.y;
+    const float4* inputs_ptr = inputs + batch_idx * IC / 4;
+    half* outputs_ptr = outputs + batch_idx * OC;
+
+    for (int ic_0 = 0; ic_0 < IC / 4; ic_0 += WARP_SIZE) {
+        float4 weights = weight[oc_idx * (IC / 4) + threadIdx.x];
+        float4 inputs_vec = inputs_ptr[ic_0 + threadIdx.x];
+
+        psum += weights.x * __half2float(inputs_vec.x);
+        psum += weights.y * __half2float(inputs_vec.y);
+        psum += weights.z * __half2float(inputs_vec.z);
+        psum += weights.w * __half2float(inputs_vec.w);
+    }
+
+    psum = warp_reduce_sum(psum);
+
+    if (threadIdx.x == 0) {
+        outputs_ptr[oc_idx] = __float2half(psum);
+    }
+}
