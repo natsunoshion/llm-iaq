@@ -4,7 +4,7 @@
 
 1. Clone this repository and navigate to IAQ folder
 ```
-git clone https://github.com/mit-han-lab/llm-iaq
+git clone https://github.com/natsunoshion/llm-iaq
 cd llm-iaq
 ```
 
