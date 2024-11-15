@@ -214,8 +214,7 @@ __global__ void __launch_bounds__(128) gemm_forward_4bit_cuda_m128n64k32(int spl
     }
   }
     
-// Haotian: Here (May 29 11:46AM PST)
-// TODO: Shang: Hoist loop invariance.
+
   for (int ax0_0_2 = 0; ax0_0_2 < 4; ++ax0_0_2) {
     for (int ax1_0 = 0; ax1_0 < 2; ++ax1_0) {
       for (int local_id = 0; local_id < 8; ++local_id) {
