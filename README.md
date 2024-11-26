@@ -21,3 +21,7 @@ pip install -e .
 cd iaq/kernels
 python setup.py install
 ```
+
+## Scripts
+
+We provide some scripts to test our iaq method.
