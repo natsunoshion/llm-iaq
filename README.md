@@ -24,4 +24,13 @@ python setup.py install
 
 ## Scripts
 
-We provide some scripts to test our iaq method.
+We provide some scripts to test our iaq method. In the folder of ./scripts, we provide (multimodal) large language models running code with our iaq to quantize.
+
+For example:
+
+```
+cd scripts
+bash llama.sh
+```
+
+to test our method.
