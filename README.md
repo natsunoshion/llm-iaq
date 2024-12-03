@@ -1,4 +1,4 @@
-# NLP 大作业
+# LLM-IAQ: Importance-Aware Quantization for Large Language Models
 
 ## Install
 
@@ -30,7 +30,11 @@ For example:
 
 ```
 cd scripts
-bash llama.sh
+bash llama3.2-1b.sh
 ```
 
 to test our method.
+
+## Acknowledgement
+
+We thank the authors of [AWQ](https://github.com/mit-han-lab/llm-awq) and [Smoothquant](https://github.com/mit-han-lab/smoothquant) for their great work.
