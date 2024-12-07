@@ -1,5 +1,13 @@
 # LLM-IAQ: Importance-Aware Quantization for Large Language Models
 
+## Introduction
+
+<p align="center">
+<img src="./figures/ours.jpg" height = "160" alt="" align=center />
+</p>
+
+We introduce Importance-Aware Quantization (IAQ) for large language models (LLMs). IAQ is a to-be-further-develop quantization method that leverages the importance of each channel of weight to quantize the model.
+
 ## Install
 
 1. Clone this repository and navigate to IAQ folder
