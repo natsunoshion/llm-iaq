@@ -165,7 +165,6 @@ class WQLinear(nn.Module):
             device=scales.device,
         )
         qscales[:, : scales.shape[1]] = scales
-        # awq_linear.scales = scales.clone().half()
         awq_linear.scales = qscales.transpose(1, 0).contiguous()
         if linear.bias is not None:
             awq_linear.bias = linear.bias.clone().half()
@@ -179,7 +178,6 @@ class WQLinear(nn.Module):
                 ).to(torch.int)[:, None]
             )
         intweight = torch.cat(intweight, dim=1)
-        # intweight = intweight.t().contiguous()
         intweight = intweight.to(dtype=torch.int32)
         awq_linear.qweight = pack_intweight(
             intweight.contiguous(), interleave=4, kstride=64
@@ -187,7 +185,6 @@ class WQLinear(nn.Module):
 
         zeros = zeros.to(dtype=torch.int32)
         scaled_zeros = torch.zeros_like(qscales)
-        # scaled_zeros[:, :scales.shape[1]] = -(qscales[:, :scales.shape[1]] * (zeros.to(torch.float32) - 8.0)).to(torch.float16)
         scaled_zeros[:, : scales.shape[1]] = -(
             qscales[:, : scales.shape[1]] * (zeros.to(torch.float32))
         ).to(torch.float16)
@@ -197,8 +194,6 @@ class WQLinear(nn.Module):
 
     @torch.no_grad()
     def forward(self, x):
-        # out_shape = x.shape[:-1] + (self.out_features,)
-        # inputs = x.reshape(-1, x.shape[-1])
         inputs = x
         if inputs.numel() / inputs.shape[-1] < 8:
             out = awq_inference_engine.gemv_forward_cuda_new(
@@ -216,8 +211,6 @@ class WQLinear(nn.Module):
                 inputs, self.qweight, self.scales, self.scaled_zeros
             )  # - 8.0 * self.scales)
         out = out + self.bias if self.bias is not None else out
-        # print(out)
-        # assert 0
         return out
 
     def extra_repr(self) -> str:
