@@ -45,4 +45,4 @@ to test our method.
 
 ## Acknowledgement
 
-We thank the authors of [AWQ](https://github.com/mit-han-lab/llm-awq) and [Smoothquant](https://github.com/mit-han-lab/smoothquant) for their great work.
+We thank the authors of [LLM.int8()](https://github.com/bitsandbytes-foundation/bitsandbytes), [AWQ](https://github.com/mit-han-lab/llm-awq) and [Smoothquant](https://github.com/mit-han-lab/smoothquant) for their great work.
