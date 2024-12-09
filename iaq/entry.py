@@ -7,6 +7,9 @@ import torch
 import argparse
 import os
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+# For some model like llama, you may need to pass hf_hub_token to login
+# import huggingface_hub
+# huggingface_hub.login("your token here")
 import json
 from accelerate import (
     init_empty_weights,
