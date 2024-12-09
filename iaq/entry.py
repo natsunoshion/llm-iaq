@@ -1,5 +1,8 @@
 from lm_eval import evaluator, tasks
 from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
+from transformers import Qwen2VLForConditionalGeneration
+from transformers import CLIPProcessor, CLIPModel
+from qwen_vl_utils import process_vision_info
 import torch
 import argparse
 import os
